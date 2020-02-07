@@ -6,30 +6,20 @@ commands_pref = '!' #commands prefix !/$/'/'/@/'#'
 
 bot = commands.Bot(command_prefix=commands_pref, description=description)#prefix to all commands
 
-commands = [
-    'clist - display all commands',
-    'echo "arg" - return arg',
-    'dice "number" - return random number betwen 1 and "number"'
-]
 
 #comand exsample
 # @bot.command()
 # async def test(ctx):
 #     await dothings
 
-@bot.command()
-async def clist(ctx):
-    for command in commands:
-        await ctx.send(commands_pref + command)
-
-@bot.command()
+@bot.command(description="return random number betwen 1 and an argument")
 async def dice(ctx, arg:int):
     try:
         await ctx.send(rint(1, arg))
     except Exception:
         await ctx.send('Oops, seems its not a number!')
 
-@bot.command()
+@bot.command(description='reply with the same message')
 async def echo(ctx, arg):
     ctx.send(arg)
 
