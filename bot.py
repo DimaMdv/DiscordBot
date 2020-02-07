@@ -7,7 +7,7 @@ commands_pref = '!' #commands prefix !/$/'/'/@/'#'
 bot = commands.Bot(command_prefix=commands_pref, description=description)#prefix to all commands
 
 commands = [
-    'help - display all commands',
+    'clist - display all commands',
     'echo "arg" - return arg',
     'dice "number" - return random number betwen 1 and "number"'
 ]
@@ -18,7 +18,7 @@ commands = [
 #     await dothings
 
 @bot.command()
-async def help(ctx):
+async def clist(ctx):
     for command in commands:
         await ctx.send(commands_pref + command)
 
