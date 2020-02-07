@@ -1,6 +1,8 @@
 from discord.ext import commands
 
-bot = commands.Bot(command_prefix='!')#prefix to all commands
+description = 'This is a simple bot for testing features'
+
+bot = commands.Bot(command_prefix='!', description=description)#prefix to all commands
 
 #comand exsample
 # @bot.command()
