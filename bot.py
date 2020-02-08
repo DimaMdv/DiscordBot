@@ -19,6 +19,13 @@ async def on_ready(ctx):
     print('------')
     await ctx.send('I\'m alive!')
 
+@bot.event #I dont know if its working, but I whant to belive so
+async def on_member_join(ctx, member):
+    guild = member.guild
+    if guild.system_channel is not None:
+        to_send = 'Welcome {0.mention} to {1.name}!'.format(member, guild)
+        await guild.system_channel.send(to_send)
+
 @bot.command(description="return random number betwen 1 and an argument")
 async def dice(ctx, arg:int):
     try:
