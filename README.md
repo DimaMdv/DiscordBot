@@ -3,5 +3,6 @@
 
 <strong>Features:</strong>
 <ul>
-<li>Replying to commangs
+<li>Reacting to commands
+<li>Reacting to a new server member
 </ul>
