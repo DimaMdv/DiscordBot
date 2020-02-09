@@ -13,7 +13,7 @@ async def on_ready(ctx):
     print(bot.user.name)
     print(bot.user.id)
     print('------')
-    await ctx.send('I\'m alive!')
+    # await ctx.send('I\'m alive!')
 
 @bot.event #I dont know if its working, but I whant to belive so
 async def on_member_join(ctx, member):
@@ -37,7 +37,7 @@ async def ping(ctx):
 
 @bot.command(description='reply with the same message')
 async def echo(ctx, arg):
-    ctx.send(arg)
+    await ctx.send(arg)
 
 
 bot.run('token') #important!
