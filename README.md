@@ -5,4 +5,5 @@
 <ul>
 <li>Reacting to commands
 <li>Reacting to a new server member
+<li>Giving a role for reaction
 </ul>
