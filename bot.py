@@ -7,17 +7,9 @@ commands_prefix = '!' #commands prefix
 
 bot = commands.Bot(command_prefix=commands_prefix, description=description)
 
-
 @bot.event
-async def on_ready(ctx): #calls when bot launched
-    channel = bot.get_channel('chanel id')
-    role = get(ctx.guild.roles, name="rolename")
-    message = await ctx.send(channel, "message text")
-    while True:
-        reaction = await ctx.wait_for_reaction(emoji="emoji", message=message)
-        await ctx.add_roles(reaction.message.author, role)
-
-
+async def on_ready(): #calls when bot launched
+    print("Im alive!")
 
 @bot.event #I dont know if its working, but I whant to belive so
 async def on_member_join(ctx, member):
@@ -41,6 +33,15 @@ async def ping(ctx):
 @bot.command(description='reply with the same message')
 async def echo(ctx, arg):
     await ctx.send(arg)
+
+# @bot.command()
+# async def role(ctx):
+#     # channel = bot.get_channel("channelid")
+#     role = get(ctx.guild.roles, name="rolename")
+#     message = await ctx.send( "message")
+#     while True:
+#         reaction = await ctx.wait_for_reaction(emoji="emoji", message=message)
+#         await ctx.add_roles(reaction.message.author, role)
 
 
 bot.run('token') #important!
