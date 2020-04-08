@@ -8,13 +8,8 @@ commands_prefix = '!' #commands prefix
 bot = commands.Bot(command_prefix=commands_prefix, description=description)
 
 
-@bot.event #calls when bot launched
-async def on_ready(ctx):
-    print('Logged in as')#logging in console
-    print(bot.user.name)
-    print(bot.user.id)
-    print('------')
-    # await ctx.send('I\'m alive!')
+@bot.event
+async def on_ready(ctx): #calls when bot launched
     channel = bot.get_channel('chanel id')
     role = get(ctx.guild.roles, name="rolename")
     message = await ctx.send(channel, "message text")
