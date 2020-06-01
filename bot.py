@@ -2,6 +2,8 @@ from discord.ext import commands
 from discord.utils import get
 from random import randint as rint
 
+token = input("Enter the token:") #just to not do it every time i lauch it
+
 description = 'This is a simple bot for testing features' #description of the bot
 commands_prefix = '!' #commands prefix
 
@@ -44,4 +46,4 @@ async def echo(ctx, arg):
 #         await ctx.add_roles(reaction.message.author, role)
 
 
-bot.run('token') #important!
+bot.run(token) #important!
